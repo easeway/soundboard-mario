@@ -1,4 +1,4 @@
-#SoundBoard SuperMario
+# ![logo](https://raw.github.com/easeway/soundboard-mario/master/web/icon.png) SoundBoard SuperMario 
 
 This is [node-webkit](https://github.com/rogerwang/node-webkit) based sound board for SuperMario sound effects.
 It also contains a built-in web server for being controlled remotely.
