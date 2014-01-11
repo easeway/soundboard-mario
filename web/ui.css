@@ -1,0 +1,93 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    padding: 0;
+    margin: 0;
+}
+
+#banner {
+    line-height: 64px;
+    background-color: #abc;
+    background-image: url(icon.png);
+    background-repeat: no-repeat;
+    background-size: 64px 64px;
+}
+
+#banner .title {
+    padding: 0;
+    margin: 0;
+    margin-top: 8px;
+    margin-left: 70px;
+    font-family: fantasy;
+    font-size: 16pt;
+    font-weight: bold;
+    color: #ff3;
+}
+
+.channel {
+    width: 100%;
+}
+
+.channel .head {
+    line-height: 40px;
+    font-family: fantasy;
+    font-size: 12pt;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-top: 8px;
+    background-color: black;
+    color: white;
+}
+
+.tracks {
+    width: 100%;
+}
+
+.track {
+    line-height: 40px;
+    width: 100%;
+}
+
+.track .button {
+    width: 100%;
+    cursor: pointer;
+}
+
+.track:nth-child(even) {
+    background-color: #ccc;
+}
+
+.track:nth-child(odd) {
+    background-color: #fff;
+}
+
+.track .key {
+    max-width: 40px;
+    min-width: 40px;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 14pt;
+    font-weight: bold;
+    color: #008;
+}
+
+.track .text {
+    font-family: sans-serif;
+    font-size: 12pt;
+}
+
+.track .loop {
+    max-width: 40px;
+    min-width: 40px;
+    padding: 0;
+    margin: 0;
+    margin-right: 10px;
+    display: inline-block;
+    float: right;
+    background: url(loop.png) center no-repeat;
+}

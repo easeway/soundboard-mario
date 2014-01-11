@@ -1,0 +1,63 @@
+---
+channels:
+    - name: music
+      text: Music Tracks
+      tracks:
+        - name: ground
+          text: Running on ground
+          file: sounds/ground.mp3
+          loop: true
+          key: "1"
+
+        - name: shield
+          text: Mario in shield
+          file: sounds/shield.mp3
+          loop: true
+          key: "2"
+
+        - name: pass
+          text: Pass the game
+          file: sounds/pass.mp3
+          key: "3"
+
+        - name: killed
+          text: Mario falls
+          file: sounds/killed.mp3
+          key: "9"
+
+        - name: game
+          text: Game Music
+          file: sounds/game.mp3
+          key: "0"
+
+        - name: mute
+          text: Mute
+          key: x
+
+    - name: effects
+      text: Sound Effects
+      tracks:
+        - name: jump
+          text: Jump
+          file: sounds/jump.mp3
+          key: j
+
+        - name: stamp
+          text: Stamp
+          file: sounds/stamp.mp3
+          key: s
+
+        - name: gift
+          text: Gift
+          file: sounds/gift.mp3
+          key: g
+
+        - name: life
+          text: Life
+          file: sounds/life.mp3
+          key: l
+
+        - name: coin
+          text: Coin
+          file: sounds/coin.mp3
+          key: c

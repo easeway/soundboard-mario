@@ -1,0 +1,20 @@
+{
+    "name": "soundboard-mario",
+    "version": "0.0.1",
+    "private": true,
+    "main": "web/index.html",
+    "window": {
+        "title": "SoundBoard - SuperMario",
+        "icon": "web/icon.png",
+        "toolbar": false,
+        "min_width": 320,
+        "min_height": 480,
+        "width": 480,
+        "height": 640
+    },
+    "dependencies": {
+        "js-class": "0.0.2",
+        "js-yaml": "3.0.1",
+        "express": "3.4.7"
+    }
+}
