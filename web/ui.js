@@ -11,6 +11,7 @@
     var ChannelSchema = new DD.Schema({
         name: DD.Types.Scalar,
         text: DD.Types.Scalar,
+        pause: DD.Types.Scalar,
         tracks: [TrackSchema]
     });
 
@@ -20,6 +21,16 @@
 
     var keyMaps = {};
 
+    function mapKey(code, fn) {
+        if (code == null) {
+            return;
+        }
+        code = code.toLowerCase().charCodeAt(0);
+        if (code && !keyMaps[code]) {
+            keyMaps[code] = fn;
+        }
+    }
+
     $(document).ready(function () {
         $(document).keypress(function (event) {
             var code = event.charCode;
@@ -27,8 +38,8 @@
                 // A-Z to lowercase
                 code += 32;
             }
-            var clip = keyMaps[code];
-            clip && Api.play(clip.c, clip.t);
+            var fn = keyMaps[code];
+            fn && fn();
         });
 
         Api.script(function (err, script) {
@@ -39,14 +50,9 @@
             if (script && Array.isArray(script.channels)) {
                 M.channels.value = script.channels;
                 script.channels.forEach(function (chn) {
+                    mapKey(chn.pause, function () { Api.pause(chn.name); });
                     Array.isArray(chn.tracks) && chn.tracks.forEach(function (track) {
-                        if (track.key != null) {
-                            var ch = track.key.toString()[0];
-                            if (ch != null) {
-                                var code = ch.toLowerCase().charCodeAt(0);
-                                keyMaps[code] = keyMaps[code] || { c: chn.name, t: track.name };
-                            }
-                        }
+                        mapKey(track.key, function () { Api.play(chn.name, track.name); });
                     });
                 });
             } else {
@@ -66,6 +72,16 @@
 
         showLoop: function (binding, track) {
             track.loop && $(binding.element).addClass('loop');
+        },
+
+        showPause: function (binding, channel) {
+            if (channel.pause) {
+                $(binding.element)
+                    .addClass('pause')
+                    .click(function () {
+                        Api.pause(channel.name);
+                    });
+            }
         }
     };
 }(window);

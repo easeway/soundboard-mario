@@ -24,6 +24,10 @@ var Api = window.nw ? (function () {
 
         play: function (chn, id, callback) {
             $.ajax('/play/' + chn + '/' + id, { type: 'POST', data: {} }, callback);
+        },
+
+        pause: function (chn, callback) {
+            $.ajax('/pause/' + chn, { type: 'POST', data: {} }, callback);
         }
     };
 })();

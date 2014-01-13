@@ -42,6 +42,22 @@ div {
     color: white;
 }
 
+.channel .head .pause {
+    max-width: 40px;
+    min-width: 40px;
+    margin-right: 10px;
+    margin-top: -4px;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 14pt;
+    font-weight: bold;
+    color: #008;
+    float: right;
+    background-color: white;
+}
+
 .tracks {
     width: 100%;
 }
@@ -89,5 +105,8 @@ div {
     margin-right: 10px;
     display: inline-block;
     float: right;
-    background: url(loop.png) center no-repeat;
+    background-image: url(loop.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
 }

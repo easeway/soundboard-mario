@@ -24,6 +24,7 @@
         <div class="channel" data-drive-attr-data-name="%{ $D.name }">
             <div class="head">
                 <span class="text">%{ $D.text || '' }</span>
+                <span data-drive-on="*:G.showPause(this, $D)">%{ $D.pause || ' ' }</span>
             </div>
             <div class="tracks" data-drive-map=".tracks">
                 <div class="track">
